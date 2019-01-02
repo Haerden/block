@@ -1,0 +1,22 @@
+.admin-item{ 
+	position:relative; 
+	overflow: hidden; 
+	float: left ; 
+	display: flex;
+	 border-left-color: 1px solid red
+ }
+.admin-item-space{
+ 	background-position-x: 0vh; 
+ 	min-height: 100px; display: flex;
+ 	margin-left: 20px;
+ 	line-height: 24px
+ }
+
+ .ant-btn-primary {
+    color: #fff;
+    background-color: #db9a2c;
+    border-color: #db9a2c;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12);
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.045);
+    margin-right: 40px;
+}

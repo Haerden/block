@@ -1,0 +1,25 @@
+.draw-content{
+	margin:100px 0px 100px;
+}
+.draw-content .draw-form {
+ padding-left: 140px;
+ padding-right: 108px;
+ border-left: 1px solid #d7d7d7
+}
+
+.draw-content .transfer-form-button {
+ width: 100%;
+ background-color: #faad14;
+ border-color: #faad14;
+ margin-bottom: 0;
+}
+
+.draw-left div {
+ margin-bottom: 54px;
+ margin-top: 30px
+}
+
+.draw-left .ant-btn-primary {
+ background-color: #d48806;
+ border-color: #d48806
+}

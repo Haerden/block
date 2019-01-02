@@ -1,0 +1,104 @@
+{
+	"success": true,
+	"data": {
+		"IFCInfo":{
+				"fullname":"Infohold Coin",
+				"shortname":"IFC",
+				"pub":"小付钱包",
+				"date":"2018-12-12",
+				"icon":"//upload-images.jianshu.io/upload",
+				"in":"1000 IFC",
+				"out":"500 IFC"
+		},
+		"adList": [{
+			"id": 1,
+			"title": "小付咖啡",
+			"imgUrl": "../static/ad.png"
+		}, {
+			"id": 2,
+			"title": "长白山",
+			"imgUrl": "//"
+		},{
+			"id": 3,
+			"title": "长白山",
+			"imgUrl": "//"
+		},
+		{
+			"id": 4,
+			"title": "长白山",
+			"imgUrl": "//"
+		}],
+		"marketList": [{
+			"id": 1,
+			"name": "HPT",
+			"price": "0.808",
+			"gap": "-0.76%",
+			"high": "0.819",
+			"low": "0.788",
+			"vol": "2,778,110,89"
+		}, {
+			"id": 2,
+			"name": "OPT",
+			"price": "0.808",
+			"gap": "-0.76%",
+			"high": "0.819",
+			"low": "0.788",
+			"vol": "2,778,110,890"
+		},{
+			"id": 3,
+			"name": "HPP",
+			"price": "0.808",
+			"gap": "-0.76%",
+			"high": "0.819",
+			"low": "0.788",
+			"vol": "2,778,110,890"
+		},{
+			"id": 4,
+			"name": "ONT",
+			"price": "0.808",
+			"gap": "-0.76%",
+			"high": "0.819",
+			"low": "0.788",
+			"vol": "2,778,110,890"
+		},{
+			"id": 5,
+			"name": "OPP",
+			"price": "0.808",
+			"gap": "-0.76%",
+			"high": "0.819",
+			"low": "0.788",
+			"vol": "2,778,110,890"
+		},{
+			"id": 6,
+			"name": "UIU",
+			"price": "0.808",
+			"gap": "-0.76%",
+			"high": "0.819",
+			"low": "0.788",
+			"vol": "2,778,110,890"
+		}],
+		"newsList": [{
+			"id": 1,
+			"title": "CUC揭牌仪式",
+			"desc": "小付钱包平台 infohold.com.cn，用最小的工作量，无缝接入蚂蚁金服生态，提供跨越设计与开发的体验解决方案。蚂蚁金服设计平台 design.alipay.com，用最小的工作量，无缝接入蚂蚁金服生态，提供跨越设计与开发的体验解决方案。",
+			"imgUrl": "../static/news1.png"
+		}, {
+			"id": 2,
+			"title": "小付钱包发行 Infohold Coin 数字货币",
+			"desc": "文/麦大人：...",
+			"imgUrl": "../static/news1.png"
+		}, {
+			"id": 3,
+			"title": "区块链技术改善人类生活",
+			"desc": "文/麦大人段《哈姆雷特》中的经典独白，相当震撼：...",
+			"imgUrl": "../static/news1.png"
+		}],
+		"recommendList": [{
+			"id": 1,
+			"imgUrl": "http://cdn2.jianshu.io/assets/web/banner-s-3-7123fd94750759acf7eca05b871e9d17.png"
+		}, {
+			"id": 2,
+			"imgUrl": "http://cdn2.jianshu.io/assets/web/banner-s-5-4ba25cf5041931a0ed2062828b4064cb.png"
+		}]
+	}
+}

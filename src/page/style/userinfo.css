@@ -1,0 +1,67 @@
+.setting-content {
+	margin: 100px 100px 35px;
+}
+.setting-content .ant-tabs .ant-tabs-left-bar {
+	background: #fff;
+	height: 900px;
+	width: 160px;
+	padding-top: 8px;
+}
+
+.setting-content .ant-tabs .ant-tabs-left-bar .ant-tabs-tab {
+	text-align: left
+}
+
+.setting-content .ant-tabs-nav .ant-tabs-tab-active {
+	color: #db9a2c;
+}
+
+.setting-content .ant-tabs-ink-bar {
+	background-color: #db9a2c;
+}
+
+.setting-content .ant-card {
+	height: 900px
+}
+
+.setting-content input {
+	width: 400px
+}
+
+.setting-content textarea {
+	width: 400px
+}
+
+.setting-content .ant-btn-primary {
+	background-color: #db9a2c;
+	border: none
+}
+
+.ant-btn-primary:hover, .ant-btn-primary:focus {
+	color: #fff;
+	background-color: #db9a2c;
+	border-color: #db9a2c;
+}
+
+.setting-content .ant-list-item-action a {
+	color: #db9a2c
+}
+
+.setting-content .ant-list-item-meta-title > a {
+	color: #333
+}
+
+.setting-content .ant-switch-checked {
+	background-color: #db9a2c
+}
+
+.setting-content .setting-title {
+	height: 60px;
+	font-size: 18px;
+	background-color: white;
+	margin-bottom: 30px;
+	line-height: 60px;
+	color: '#333';
+	padding-left: 30px;
+	box-shadow: 3px 3px 10px rgba(0,0,0,0.1)
+}

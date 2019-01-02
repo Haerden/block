@@ -1,0 +1,75 @@
+/*ifc*/
+.ifcImage{
+	float: right;
+	bottom: 20px;
+	right: -10px;
+	
+}
+.coin-count .ant-card {
+	background: linear-gradient(to top ,#d58a08, #fec33b )
+}
+
+.coin-count h2 {
+	color: white;
+	margin-bottom: 0;
+}
+
+.coin-count p {
+	margin-bottom: 0.5em
+}
+
+.coin-count .ant-progress-text {
+	font-size: 20px
+}
+
+.coin-count .ant-progress-inner {
+	background: white;
+	border-radius: 50%;
+	padding: 6px;
+}
+
+.info-content .ant-row {
+	margin-bottom: 1em;
+	font-size: 16px
+}
+
+.info-content .ant-col-offset-8 {
+	text-align: right
+}
+
+.info-content .ant-col-8 {
+	color: #8d8d8d
+}
+
+.info-content .ant-col-offset-8 {
+	color: #5a5a5a
+}
+
+.ant-progress-status-success .ant-progress-circle-path {
+	stroke: #db9a2c;
+}
+
+.ant-progress-circle.ant-progress-status-success .ant-progress-text {
+	color: #db9a2c;
+}
+
+.coin-count .ant-card {
+	text-align: center;
+}
+
+.coin-count .antd-pro-charts-chart-card-meta {
+	font-size: 18px;
+	text-align: center;
+	color: white;
+	margin-bottom: 35px;
+}
+
+.coin-count .antd-pro-charts-chart-card-chartCard .antd-pro-charts-chart-card-metaWrap {
+	float: none
+}
+.info-content .ant-col-offset-6{
+	text-align: right;
+}
+.coin-count .antd-pro-charts-pie-pie .antd-pro-charts-pie-total > h4 {
+	font-size: 24px
+}

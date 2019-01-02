@@ -1,0 +1,29 @@
+.accountWrapper{
+	margin:100px 100px 35px;
+}
+
+.selectDiv{
+	position: absolute;
+	right: 30px;
+	width: 220px;
+}
+
+.ant-row {
+	font-size: 16px;
+}
+.ant-col-19 {
+    font-size: 35px;
+    margin-top: 12px;
+}
+.accountWrapper .ant-col-6 {
+	font-size: 16px;
+	margin-top: 20px 
+}
+.ant-col-18 {
+	font-size: 16px;
+	margin-top: 20px 
+}
+
+#cell {
+	border-bottom:1px solid #ddd
+}

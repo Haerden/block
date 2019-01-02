@@ -1,0 +1,146 @@
+.trade-content{
+	margin: 100px 20px 35px;
+}
+.trade-title {
+	height: 50px;
+	font-size: 18px;
+	background-color: white;
+	margin-bottom: 30px;
+	line-height: 50px;
+	color: '#333';
+	padding-left: 30px;
+	box-shadow: 3px 3px 10px rgba(0,0,0,0.1)
+}
+
+.trade-title .currencyname {
+	padding-left: 35px;
+}
+
+.trade-title .latestPrice {
+	padding-left: 135px;
+	font-size: 16px
+}
+
+.trade-title .gain {
+	padding-left: 28px;
+	font-size: 16px
+}
+
+.trade-content .ant-card-grid {
+	box-shadow: none;
+	padding: 0
+}
+
+.changeTitle {
+	border-bottom: 1px solid #e8e8e8;
+	height: 50px;
+	line-height: 50px;
+	font-size: 16px
+}
+
+.trade-content .changeInput p {
+	color: #333;
+	text-align: left;
+	margin-bottom: 10px
+}
+
+.trade-content .changeInput {
+	margin-bottom: 28px;
+	padding: 0 20px
+}
+
+.trade-botton {
+	text-align: left;
+	padding: 0 20px
+}
+
+.trade-botton p {
+	color: #333;
+	font-size: 17px;
+	margin-bottom: 0;
+	padding-top: 30px;
+}
+
+.trade-botton .ant-btn {
+	background-color: #a0d911;
+	margin-top: 32px;
+	margin-bottom: 41px;
+	border: 1px solid #a0d911;
+	color: white
+}
+
+.trade-botton .ant-btn-primary {
+	background-color: #faad14;
+	border: 1px solid #faad14
+}
+
+.trade-botton .ant-btn:hover, .ant-btn:focus {
+	color: #fff;
+	background-color: #a0d911;
+	border-color: #a0d911;
+}
+
+.trade-botton .ant-btn-primary:hover, .ant-btn-primary:focus {
+	color: #fff;
+	background-color: #faad14;
+	border-color: #faad14;
+}
+
+.trade-info .ant-col-15 .ant-card-body {
+	padding-left: 22px;
+	padding-bottom: 60px;
+}
+
+.trade-info .coin-name {
+	color: #8d8d8d;
+	font-weight: bold;
+	font-size: 30px;
+	margin-top: 22px;
+	margin-bottom: 13px
+}
+
+.trade-info .coin-fname {
+	font-size: 18px
+}
+
+.trade-info .coin-info-item {
+	height: 68px;
+	line-height: 68px;
+	border-bottom: 1px solid #f2f2f2;
+	font-size: 16px;
+	color: #8d8d8d
+}
+
+.trade-info .coin-info-item .coin-info-label {
+	color: #333;
+	padding-left: 30px;
+}
+
+.trade-info .coin-info-item a {
+	color: #e29a2c;
+	padding-left: 30px;
+}
+
+.trade-content .ant-list-item-meta-description {
+	text-align: right
+}
+
+.trade-content .ant-slider-dot-active {
+	border-color: #d48806
+}
+
+.trade-content .ant-slider-dot {
+	border-color: #d48806
+}
+
+.trade-content .ant-slider:hover .ant-slider-track {
+	background-color: #d48806;
+}
+
+.trade-content .ant-slider-track {
+	background-color: #d48806;
+}
+
+.trade-content .ant-slider-handle {
+	border: solid 2px #d48806;
+}

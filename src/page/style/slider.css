@@ -1,0 +1,337 @@
+/*币币转让*/
+.components-form-transfer .transfer-form-button {
+	background-color: #faad14;
+	border-color: #faad14;
+	
+}
+.components-form-transfer{
+	margin: 100px ;
+	margin:100px 20px 55px;
+}
+.ant-carousel .slick-slide {
+	text-align: center;
+	height: 160px;
+	line-height: 160px;
+	overflow: hidden;
+}
+
+.ant-carousel .slick-slide h3 {
+	color: #fff;
+}
+
+#box {
+	margin-top: 45px;
+	margin-bottom: 55px;
+	margin-left: 82px;
+}
+
+#container {
+	position: relative;
+	height: 235px;
+}
+
+#container .item {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 374px;
+	height: 235px;
+	overflow: hidden;
+	z-index: 1;
+	opacity: 1;
+}
+
+#container .item .pic {
+	float: left;
+	width: 374px;
+	height: 235px;
+	display: inline;
+}
+
+#container .item .pic img {
+	width: 374px;
+	height: 235px;
+	vertical-align: top;
+}
+
+#container h2 {
+	top: 50%;
+	position: absolute;
+	left: 10%;
+	transform: translate(0,-50%);
+	color: white;
+	text-align: center;
+	font-size: 25px
+}
+
+img {
+	vertical-align: top;
+	border: 0
+}
+
+li,ul {
+	list-style: none;
+	text-transform: capitalize
+}
+
+#banner {
+	margin-bottom: -10px
+}
+
+#carousel {
+	display: flex;
+	position: relative;
+	z-index: 2;
+	margin-top: 20px;
+	transform-style: preserve-3d;
+	perspective: 800px;
+	justify-content: center;
+}
+
+#carousel img {
+	position: absolute;
+	top: 50%;
+	transition: transform .5s ease-in-out;
+	cursor: pointer
+}
+
+#bannerNav {
+	position: relative;
+	margin-top: 20px;
+	height: 10px;
+	padding: 10px 0;
+	text-align: center
+}
+
+#carousel {
+	height: 235px
+}
+
+#carousel img {
+	width: 374px;
+	// border-radius: 10px;
+	opacity: 0;
+}
+/*币币转让*/
+.components-form-transfer .transfer-form-button {
+	width: 100%;
+	background-color: #faad14;
+	border-color: #faad14
+}
+
+.ant-carousel .slick-slide {
+	text-align: center;
+	height: 160px;
+	line-height: 160px;
+	overflow: hidden;
+}
+
+.ant-carousel .slick-slide h3 {
+	color: #fff;
+}
+
+#box {
+	margin-top: 45px;
+	margin-bottom: 55px;
+	margin-left: 82px;
+}
+
+#container {
+	position: relative;
+	height: 235px;
+}
+
+#container .item {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 374px;
+	height: 235px;
+	overflow: hidden;
+	z-index: 1;
+	opacity: 1;
+}
+
+#container .item .pic {
+	float: left;
+	width: 374px;
+	height: 235px;
+	display: inline;
+}
+
+#container .item .pic img {
+	width: 374px;
+	height: 235px;
+	vertical-align: top;
+}
+
+#container h2 {
+	top: 50%;
+	position: absolute;
+	left: 10%;
+	transform: translate(0,-50%);
+	color: white;
+	text-align: center;
+	font-size: 25px
+}
+
+img {
+	vertical-align: top;
+	border: 0
+}
+
+li,ul {
+	list-style: none;
+	text-transform: capitalize
+}
+
+#banner {
+	margin-bottom: -10px
+}
+
+#carousel {
+	display: flex;
+	position: relative;
+	z-index: 2;
+	margin-top: 20px;
+	transform-style: preserve-3d;
+	perspective: 800px;
+	justify-content: center;
+}
+
+#carousel img {
+	position: absolute;
+	// left: 50%;
+	top: 50%;
+	//  margin-left: -140px;
+	transition: transform .5s ease-in-out;
+	// box-shadow: 8px 8px 10px rgba(0,0,0,.2);
+	cursor: pointer
+}
+
+#bannerNav {
+	position: relative;
+	margin-top: 20px;
+	height: 10px;
+	padding: 10px 0;
+	text-align: center
+}
+
+#carousel {
+	height: 235px
+}
+
+#carousel img {
+	width: 374px;
+	opacity: 0;
+}
+/*币币转让*/
+.components-form-transfer .transfer-form-button {
+	width: 100%;
+	background-color: #faad14;
+	border-color: #faad14
+}
+
+.ant-carousel .slick-slide {
+	text-align: center;
+	height: 160px;
+	line-height: 160px;
+	overflow: hidden;
+}
+
+.ant-carousel .slick-slide h3 {
+	color: #fff;
+}
+
+#box {
+	margin-top: 45px;
+	margin-bottom: 55px;
+	margin-left: 82px;
+}
+
+#container {
+	position: relative;
+	height: 235px;
+}
+
+#container .item {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 374px;
+	height: 235px;
+	overflow: hidden;
+	z-index: 1;
+	opacity: 1;
+}
+
+#container .item .pic {
+	float: left;
+	width: 374px;
+	height: 235px;
+	display: inline;
+}
+
+#container .item .pic img {
+	width: 374px;
+	height: 235px;
+	vertical-align: top;
+}
+
+#container h2 {
+	top: 50%;
+	position: absolute;
+	left: 10%;
+	transform: translate(0,-50%);
+	color: white;
+	text-align: center;
+	font-size: 25px
+}
+
+img {
+	vertical-align: top;
+	border: 0
+}
+
+li,ul {
+	list-style: none;
+	text-transform: capitalize
+}
+
+#banner {
+	margin-bottom: -10px
+}
+
+#carousel {
+	display: flex;
+	position: relative;
+	z-index: 2;
+	margin-top: 20px;
+	transform-style: preserve-3d;
+	perspective: 800px;
+	justify-content: center;
+}
+
+#carousel img {
+	position: absolute;
+	top: 50%;
+	transition: transform .5s ease-in-out;
+	cursor: pointer
+}
+
+#bannerNav {
+	position: relative;
+	margin-top: 20px;
+	height: 10px;
+	padding: 10px 0;
+	text-align: center
+}
+
+#carousel {
+	height: 235px
+}
+
+#carousel img {
+	width: 374px;
+	opacity: 0;
+}

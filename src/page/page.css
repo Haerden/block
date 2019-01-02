@@ -1,0 +1,13 @@
+.banner {
+	height:400px;
+	width: 100%;
+	margin-top: 76px;
+}
+.banner_after{
+	height:150px;
+	width: 100%;
+	margin-top: 76px;
+	transition: height 0.7s;
+}
+
+
