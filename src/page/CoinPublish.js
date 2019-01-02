@@ -74,7 +74,7 @@ class CoinPublish extends React.Component {
                         label="发行时间"
                         >
                         {getFieldDecorator('date-time-picker')(
-                            <DatePicker showTime format="YYYY-MM-DD HH:mm:ss" />
+                            <DatePicker showTime format="YYYY-MM-DD HH:mm:ss" style={{width:'100%'}} />
                         )}
                     </FormItem>
                     <FormItem
