@@ -38,7 +38,7 @@ class CoinFlow extends Component {
 		const data = [{
   			key: '1',
   			id: 'CB3EE8EF04143B75',
-  			time: "2018-12-25 15:00",
+  			time: "2018-09-05 15:00",
   			from: "张XX",
   			to: "刘XX",
   			count:"300 IFC",
@@ -46,7 +46,7 @@ class CoinFlow extends Component {
 		}, {
 		  key: '2',
 		  id: 'CB3EE8EF04143B72',
-		  time: "2018-12-05 15:00",
+		  time: "2018-09-05 15:00",
 		  from: "刘XX",
 		  to: "宋XX",
 		  count:"800 IFC",
@@ -54,7 +54,7 @@ class CoinFlow extends Component {
 		}, {
 		  key: '3',
 		  id: 'CB3EE8EF04143B76',
-		  time: "2018-11-09 11:00",
+		  time: "2018-09-09 11:00",
 		  from: "张XX",
 		  to: "王XX",
 		  count:"2300 IFC",

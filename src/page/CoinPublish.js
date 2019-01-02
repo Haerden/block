@@ -56,8 +56,9 @@ class CoinPublish extends React.Component {
                         rules: [{
                             type: 'email', message: 'The input is not valid E-mail!',
                         }],
+                        initialValue:'长白山旅游景区'
                         })(
-                        <Input />
+                        <Input/>
                         )}
                     </FormItem>
                     <FormItem
@@ -65,6 +66,7 @@ class CoinPublish extends React.Component {
                         label='简称：'
                     >
                         {getFieldDecorator('nickname', {
+                            initialValue:'CBC'
                         })(
                         <Input />
                         )}
@@ -74,15 +76,22 @@ class CoinPublish extends React.Component {
                         label="发行时间"
                         >
                         {getFieldDecorator('date-time-picker')(
-                            <DatePicker showTime format="YYYY-MM-DD HH:mm:ss" style={{width:'100%'}} />
+                            <DatePicker style={{ width: '100%' }} placeholder='2018-12-15'/>
                         )}
                     </FormItem>
                     <FormItem
                         {...formItemLayout}
                         label="有效期"
                         >
-                        {getFieldDecorator('date-time-picker')(
-                            <DatePicker showTime format="YYYY-MM-DD HH:mm:ss" />
+                        {getFieldDecorator('select',{
+                            initialValue:'1年'
+                        })(
+                            <Select>
+                                <Option value="1">1年</Option>
+                                <Option value="2">2年</Option>
+                                <Option value="3">3年</Option>
+                                <Option value="4">4年</Option>
+                            </Select>
                         )}
                     </FormItem>
                     <FormItem
@@ -92,7 +101,9 @@ class CoinPublish extends React.Component {
                         <InputNumber
                             min={1}
                             max={100000000}
-                            onChange={this.handleNumberChange}
+                            defaultValue={1}
+                            style={{width:'100%'}}
+                            addonAfter='IFC'
                         />
                     </FormItem>
                     <FormItem
@@ -101,7 +112,7 @@ class CoinPublish extends React.Component {
                     >
                         {getFieldDecorator('price', {
                         })(
-                        <Input />
+                        <Input addonAfter='IFC' />
                         )}
                     </FormItem>
                     <FormItem
@@ -112,27 +123,27 @@ class CoinPublish extends React.Component {
                             rules: [
                             { message: 'Please select your country!' },
                             ],
+                            initialValue:'免费赠与'
                         })(
-                            <Select placeholder="请输入IFC 币账户地址">
-                            </Select>
+                            <Input  disabled/>
                         )}
                     </FormItem>    
                     <FormItem label="简述"
                         {...formItemLayout}
                     >
-                        <TextArea rows={4} />
+                        <TextArea rows={4} placeholder='企业币概述介绍' />
                     </FormItem>    
                     <FormItem label="上传文件"
                         {...formItemLayout}
                     >
                         <Upload {...props}>
                             <Button>
-                                <Icon type="upload" /> Upload
+                                <Icon type="upload" /> 上传文件
                             </Button>
                         </Upload>
                     </FormItem>                             
-                    <FormItem {...tailFormItemLayout}>
-                        <Button type="primary">确定</Button>
+                    <FormItem style={{float:'right',marginRight:300}}>
+                        <Button type="primary">发币</Button>
                         <Button>重置</Button>
                     </FormItem>
                 </Form>                

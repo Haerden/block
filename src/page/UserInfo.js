@@ -67,14 +67,14 @@ class UserInfo extends React.Component{
                             <FormItem label="邮箱">
                                 {
                                     getFieldDecorator('email', {
-                                        initialValue: 'infohold.com',
+                                        initialValue: 'xiaofuqianbao@infohold.com.cn',
                                         rules: [
                                             {
                                                 message: '用户名不能为空'
                                             }
                                         ]
                                     })(
-                                        <Input placeholder="请输入邮箱" />
+                                        <Input placeholder="请输入邮箱" size='small' />
                                     )
                                 }
                             </FormItem>
@@ -83,18 +83,19 @@ class UserInfo extends React.Component{
                                     getFieldDecorator('name', {
                                         initialValue: 'Infohold coin'
                                     })(
-                                        <Input  placeholder="请输入昵称" />
+                                        <Input  placeholder="请输入昵称"  size='small' />
                                     )
                                 }
                             </FormItem>
                             <FormItem label="个人简介">
                                 {
                                     getFieldDecorator('profile', {
-                                        initialValue: '个人简介'
                                     })(
                                         <Input.TextArea
-                                            placeholder=''
+                                            placeholder='这个人很懒，什么都没留下'
                                             rows={4}
+                                            size='small'
+                                            style={{fontSize:13}}
                                         />
                                     )
                                 }
@@ -102,9 +103,10 @@ class UserInfo extends React.Component{
                             <FormItem label="国家地区">
                                 {
                                     getFieldDecorator('country', {
+                                        initialValue:'China'
                                     })(
-                                        <Select style={{ maxWidth: 220 }}>
-                                        <Option value="China">中国</Option>
+                                        <Select style={{ maxWidth: 220 }} size='small'>
+                                            <Option value="China">中国</Option>
                                         </Select>
                                     )
                                 }
@@ -112,9 +114,9 @@ class UserInfo extends React.Component{
                             <FormItem label="所在省市">
                                 {
                                     getFieldDecorator('geographic', {
-                                        
+                                        initialValue:'zhejiang'
                                     })(
-                                        <Select style={{ maxWidth: 220 }}>
+                                        <Select style={{ maxWidth: 220 }} size='small'>
                                             <Option value="zhejiang">浙江</Option>
                                         </Select>
                                     )
@@ -125,7 +127,7 @@ class UserInfo extends React.Component{
                                     getFieldDecorator('address',{
                                         initialValue:'北京市海淀区奥林匹克公园'
                                     })(
-                                        <Input />
+                                        <Input size='small'/>
                                     )
                                 }
                             </FormItem>
@@ -134,12 +136,12 @@ class UserInfo extends React.Component{
                                     getFieldDecorator('phone',{
                                         initialValue:'010-75676568'
                                     })(
-                                        <Input />
+                                        <Input size='small' />
                                     )
                                 }
                             </FormItem>
                             <FormItem>
-                                <Button type="primary" onClick={this.handleSubmit} size={"small"}>更新信息</Button>
+                                <Button type="primary" onClick={this.handleSubmit}>更新信息</Button>
                             </FormItem>
                         </Form>
                     </Card>    

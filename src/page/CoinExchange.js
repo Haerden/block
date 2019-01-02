@@ -11,10 +11,22 @@ class CoinExchange extends React.Component{
                 latestPrice:30.00,
                 infoName:'长白山旅游币',
                 gain:'-20%'
-            }
+            },
+            otherCoinTotal:0,
+            cbcCoinTotal:0
+
         }
     }
-   
+    handleOtherChange = (value) => {
+        this.setState({
+            otherCoinTotal:value 
+        })
+    }
+    handleCbcChange = (value) => {
+        this.setState({
+            cbcCoinTotal:value 
+        })
+    }
     onRowClick = (record, index) => {
         let selectKey = [index];
         this.setState({
@@ -25,7 +37,7 @@ class CoinExchange extends React.Component{
     render(){
         const marketList = [{
 			"id": 1,
-			"currencyName": "HPT",
+			"currencyName": "CBC",
 			"latestPrice": "0.808",
 			"gain": "0.76",
 		}, {
@@ -70,6 +82,88 @@ class CoinExchange extends React.Component{
 			"gain": "-2.66",
 		},
         ];
+        const EntrustList = [{
+            "id": 1,
+            "businessTitle":"买入",
+			"entrustPrice": "0.0053",
+			"entrustCount": "50",
+			"entrustTotal": "50",
+		}, {
+            "id": 2,
+            "businessTitle":"卖出",
+			"entrustPrice": "0.0052",
+			"entrustCount": "40",
+			"entrustTotal": "38",
+		},{
+            "id": 3,
+            "businessTitle":"买入",
+			"entrustPrice": "0.0052",
+			"entrustCount": "40",
+			"entrustTotal": "38",
+		},{
+            "id": 4,
+            "businessTitle":"卖出",
+			"entrustPrice": "0.0052",
+			"entrustCount": "40",
+			"entrustTotal": "38",
+		},{
+            "id": 5,
+            "businessTitle":"买入",
+			"entrustPrice": "0.0052",
+			"entrustCount": "40",
+			"entrustTotal": "38",
+		},{
+            "id": 6,
+            "businessTitle":"卖出",
+			"entrustPrice": "0.0052",
+			"entrustCount": "40",
+			"entrustTotal": "38",
+		},{
+            "id": 7,
+            "businessTitle":"买入",
+			"entrustPrice": "0.0052",
+			"entrustCount": "40",
+			"entrustTotal": "38",
+		},
+        ];
+        const TimeList = [{
+            "id": 1,
+            "time":"15:05:46",
+			"businessTitle": "卖出",
+			"entrustPrice": "0.0053",
+			"entrustCount": "50",
+		}, {
+            "id": 2,
+            "time":"15:04:31",
+			"businessTitle": "买入",
+			"entrustPrice": "0.0052",
+			"entrustCount": "40",
+		},{
+            "id": 3,
+            "time":"15:04:46",
+			"businessTitle": "买入",
+			"entrustPrice": "0.0051",
+			"entrustCount": "30",
+		},{
+            "id": 4,
+            "time":"15:03:22",
+			"businessTitle": "卖出",
+			"entrustPrice": "0.0050",
+			"entrustCount": "38",
+		},{
+            "id": 5,
+            "time":"12:03:22",
+			"businessTitle": "买入",
+			"entrustPrice": "0.0048",
+			"entrustCount": "36",
+		},{
+            "id": 6,
+            "time":"11:03:22",
+			"businessTitle": "买入",
+			"entrustPrice": "0.0045",
+			"entrustCount": "30",
+		}
+        ];
         const gridStyle = {
             width: '50%',
             textAlign: 'center',
@@ -103,6 +197,48 @@ class CoinExchange extends React.Component{
             render: text => (
                 text > 0 ? <span style={{color:'#FAAD14'}}>{text+'%'}</span> : <span style={{color:'#A0D911'}}>{text+'%'}</span>
               )
+          }
+        ];
+        const columnsEntrust = [{
+            title: '',
+            dataIndex: 'businessTitle',
+            width:'25%',
+            render: text => (
+                text == '买入' ? <span style={{color:'#FAAD14'}}>{text}</span> : <span style={{color:'#A0D911'}}>{text}</span> 
+            )
+          }, {
+            title: '价格(CBC)',
+            dataIndex: 'entrustPrice',
+            width:'25%',
+          },{
+            title: '数量(IFC)',
+            dataIndex: 'entrustCount',
+            width:'25%',
+          }, {
+            title: '累计(IFC)',
+            dataIndex: 'entrustTotal',
+            width:'25%',
+          }
+        ];
+        const columnsTime = [{
+            title: '时间',
+            dataIndex: 'time',
+            width:'25%',
+          },{
+            title: '方向',
+            dataIndex: 'businessTitle',
+            width:'25%',
+            render: text => (
+                text == '买入' ? <span style={{color:'#FAAD14'}}>{text}</span> : <span style={{color:'#A0D911'}}>{text}</span> 
+            )
+          }, {
+            title: '价格(IFC)',
+            dataIndex: 'entrustPrice',
+            width:'25%',
+          },{
+            title: '数量(CBC)',
+            dataIndex: 'entrustCount',
+            width:'25%',
           }
         ];
         const newsList = [
@@ -146,7 +282,7 @@ class CoinExchange extends React.Component{
                             />
                        </Card>
                     </Col>
-                    <Col span={17} offset={1}>
+                    <Col span={18} style={{marginTop:0}}>
                         <Row>
                             <div className="trade-title">
                                 <span>{this.state.selectedItem.currencyName}</span>
@@ -172,13 +308,12 @@ class CoinExchange extends React.Component{
                                             <p>兑换量</p>
                                             <Input 
                                             suffix={this.state.selectedItem.currencyName}
-                                            value='25000.00'
-                                            disabled
+                                            value={this.state.otherCoinTotal}
                                             />
                                         </div> 
                                         <div className="trade-botton">
-                                            <Slider marks={marks} min={0} max={10000} />
-                                            <p>可兑换 125.00 IFC</p>
+                                            <Slider marks={marks} min={0} max={10000} onChange={this.handleOtherChange} />
+                                            <p>可兑换 {this.state.otherCoinTotal/4} IFC</p>
                                             <Button block>{this.state.selectedItem.currencyName} => IFC</Button>
                                         </div>
                                     </Card.Grid>
@@ -198,13 +333,12 @@ class CoinExchange extends React.Component{
                                             <p>兑换量</p>
                                             <Input 
                                             suffix='IFC'
-                                            value='250'
-                                            disabled
+                                            value={this.state.cbcCoinTotal}
                                             />
                                         </div> 
                                         <div className="trade-botton">
-                                            <Slider marks={marksIFC} min={0} max={1000} />
-                                            <p>可兑换 125.00 IFC</p>
+                                            <Slider marks={marksIFC} min={0} max={1000}  onChange={this.handleCbcChange} />
+                                            <p>可兑换 {this.state.cbcCoinTotal/2} IFC</p>
                                             <Button type="primary"  block>IFC => {this.state.selectedItem.currencyName}</Button>
                                         </div>                                      
                                     </Card.Grid>
@@ -212,8 +346,8 @@ class CoinExchange extends React.Component{
                             </Col>
                             <Col span={8}  offset={1}>
                                 <Card title="委托列表" style={{height:506}}>
-                                    <Table columns={columns} 
-                                        dataSource={marketList} 
+                                    <Table columns={columnsEntrust} 
+                                        dataSource={EntrustList} 
                                         pagination={false} 
                                         scroll={{ y: 350 }}
                                     />
@@ -239,7 +373,7 @@ class CoinExchange extends React.Component{
                         />
                        </Card>
                     </Col>
-                    <Col span={17} className="trade-info" offset={1}>
+                    <Col span={18} className="trade-info">
                         <Row>
                             <Col span={15} >
                                 <Card title="币种资料" style={{height:'560px'}}>
@@ -286,11 +420,11 @@ class CoinExchange extends React.Component{
                                 </Card>
                             </Col>
                             <Col span={8} offset={1} style={{height:'560px'}}>
-                                <Card title="委托列表">
-                                    <Table columns={columns} 
-                                        dataSource={marketList} 
+                                <Card title="实时成交">
+                                    <Table columns={columnsTime} 
+                                        dataSource={TimeList} 
                                         pagination={false} 
-                                        scroll={{ y: 405 }}
+                                        scroll={{ y: 395 }}
                                     />
                                 </Card>
                             </Col>

@@ -31,7 +31,8 @@
 .setting-content textarea {
 	width: 400px
 }
-
+.setting-content label{ font-size: 13px}
+.setting-content .ant-form-item-label{line-height: 1.5}
 .setting-content .ant-btn-primary {
 	background-color: #db9a2c;
 	border: none
