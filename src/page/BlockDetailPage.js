@@ -1,5 +1,5 @@
 import React,{ Component } from 'react';
-import {Card,Row,Col} from 'antd';
+import {Card,Row,Col,Icon} from 'antd';
 import {Link} from "react-router-dom";
 
 import './style/slider.css';
@@ -10,14 +10,46 @@ class BlockDetailPage extends Component {
 	  console.log(value); 
 	}
 	render() {
+		const blockInf=[{
+			coinName:"IFC-bcdwop12378",
+			coinNumber:"0.0895891 IFC",
+			createTime:"2018-12-19 14:09:56",
+			coinInfOne:"14LKRuH5LywgE99tw",
+			coinInfTwo:"1.04049032",
+			coinInfThree:"14PSpuSo7tGZA5VzsgyVnGjTy7wRPSTJL",
+			coinInfFour:"12.58958791"
+		},{
+			coinName:"IFC-bcdwop12372",
+			coinNumber:"0.0895892 IFC",
+			createTime:"2018-12-19 14:09:36",
+			coinInfOne:"14LKRuH5LywgE99twe8r2sCvny8QcMuUia",
+			coinInfTwo:"1.04049031",
+			coinInfThree:"14PSpuSo7tGZA5VzsgyVnG",
+			coinInfFour:"12.58958351"
+		},{
+			coinName:"IFC-bcdwop12328",
+			coinNumber:"0.0895891 IFC",
+			createTime:"2018-12-19 14:09:56",
+			coinInfOne:"14LKRuH5LywgE99tw",
+			coinInfTwo:"1.04049032",
+			coinInfThree:"14PSpuSo7tGZA5VzsgyVnGjTy7wRPSTJL",
+			coinInfFour:"12.58958791"
+		},{
+			coinName:"IFC-bcdwop123421",
+			coinNumber:"0.0895891 IFC",
+			createTime:"2018-12-19 14:09:56",
+			coinInfOne:"14LKRuH5LywgE99tw",
+			coinInfTwo:"1.04049032",
+			coinInfThree:"14PSpuSo7tGZA5VzsgyVnGjTy7wRPSTJL",
+			coinInfFour:"12.58958791"
+		}];
 		return (
-		  <Link to={`/details/${this.props.params.id}`}>
 			<div className="blockWapper">
                 <Card title="摘要" className="abstract-card">
                 	<Row>
 					<Col span={7} style={{ borderRight:'1px solid #ddd', padding:'0 20px'}}>
 						<p>
-							<span>高度{this.props.params.id}</span>
+							<span>高度</span>
 							<span className="fr">554,,450</span>
 						</p>
 						<p>
@@ -60,7 +92,7 @@ class BlockDetailPage extends Component {
 						</p>
 						<p>
 							<span>播报方</span>
-							<span className="fr">ViaBTC</span>
+							<span className="fr mainColor">ViaBTC</span>
 						</p>
 						<p>
 							<span>时间</span>
@@ -70,11 +102,11 @@ class BlockDetailPage extends Component {
 					<Col span={10} style={{padding:'0 20px'}}>
 						<p>
 							<span>块哈希</span>
-							<span className="fr">00000000000000032435456455768723b3a332ffa</span>
+							<span className="fr">000000000000000356455768723b3a332ffa</span>
 						</p>
 						<p>
 							<span>前一个块</span>
-							<span className="fr">00000000000000032435456455768723b3a332ffa</span>
+							<span className="fr">000000000000000356455768723b3a332ffa</span>
 						</p>
 						<p>
 							<span>后一个块</span>
@@ -82,52 +114,44 @@ class BlockDetailPage extends Component {
 						</p>
 						<p>
 							<span>Merkle Root</span>
-							<span className="fr">831d45c34b485sa9540v95460bz0299003003eer3</span>
+							<span className="fr">831d45sa9540v95460bz0299003003eer3</span>
 						</p>
 					</Col>
 					</Row>
                 </Card>
 				<Card title="交易">
-					<Card
-						style={{ marginTop: 1 }}
-						type="inner"
-						title="IFC-bcdwop12378"
-						extra={
-							<div>
-								<span style={{marginRight:30}}>0.0895891  IFC</span>
-								<span>2018-12-19 14:09:56</span>
-							</div>
-						}
-						>
-						<Row>
-							<Col span={8}>14LKRuH5LywgE99tw</Col>
-							<Col span={4}>1.040</Col>
-							<Col span={8}>14PSpuSo7tGZA5VzsgyVn</Col>
-							<Col span={4}>122134567.58958791</Col>
-						</Row>
-					</Card>
-					<Card
-						style={{ marginTop: 30 }}
-						type="inner"
-						title="IFC-bcdwop12378"
-						extra={
-							<div>
-								<span style={{marginRight:30}}>0.0895891  CBC</span>
-								<span>2018-12-19 14:09:56</span>
-							</div>
-						}
-						>
-						<Row>
-							<Col span={8}>14LKRuH5LywgE99twe8r2sCvny8QcMuUia</Col>
-							<Col span={4}>1.04049032</Col>
-							<Col span={8}>14PSpuSo7tGZA5VzsgyVnGjTy7wRPSTJL</Col>
-							<Col span={4}>12.58958791</Col>
-						</Row>
-					</Card>
+					{blockInf.map((item, index)=>{
+                        return (
+							<Card
+								type="inner"
+								title={item.coinName}
+								extra={
+									<div>
+										<span style={{marginRight:30}}>{item.coinNumber}</span>
+										<span>{item.createTime}</span>
+									</div>
+								}
+								>
+								<Row>
+									<Col span={8}>{item.coinInfOne}</Col>
+									<Col span={4}>{item.coinInfTwo}</Col>
+									<Col span={1}>
+										<Icon type="right-circle" theme="filled"  style={{color:'#d9d9d9',fontSize:24}} />
+									</Col>
+									<Col span={7}>
+										{item.coinInfThree}
+									</Col>
+									<Col span={4} style={{textAlign:'right'}}>{item.coinInfFour}</Col>
+								</Row>
+								<span className="block-mark">12.58958791</span>
+							</Card>					
+						)}
+						)
+					}
+
 				</Card>
                 	
             </div>
-			</Link>
 		)
 	}
 }

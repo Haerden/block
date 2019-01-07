@@ -28,10 +28,53 @@
 	border-bottom:1px solid #ddd
 }
 /*区块详情*/
-.blockWapper{margin:100px 100px 35px; color: #db9a2c}
-.blockWapper p{ color: #8d8d8d}
-.blockWapper .fr{ float: right; color: #5a5a5a}
-.blockWapper .ant-card-body .ant-card-head-title{color: #db9a2c}
-.blockWapper .ant-row{color: #db9a2c}
-.abstract-card{margin-bottom: 20px}
-.abstract-card .ant-card-wider-padding .ant-card-body{ padding: 24px 0}
+.blockWapper{
+	margin:100px 100px 35px; 
+	color: #db9a2c
+}
+.blockWapper p .mainColor{
+	color: #db9a2c
+}
+.blockWapper p{ 
+	color: #8d8d8d
+}
+.blockWapper .fr{ 
+	float: right; 
+	color: #5a5a5a
+}
+.blockWapper .ant-card-body .ant-card-head-title{
+	color: #db9a2c
+}
+.blockWapper .ant-row{
+	color: #db9a2c
+}
+.abstract-card{
+	margin-bottom: 20px
+}
+.abstract-card .ant-card-wider-padding .ant-card-body{
+	 padding: 24px 0
+}
+.blockWapper .block-mark{
+	margin-top: 50px;
+    float: right;
+    width: 112px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    background: #f2f2f2;
+}
+.blockWapper .ant-row{
+ font-size: 14px
+}
+.blockWapper .ant-col-4{
+	color:#8d8d8d
+}
+.blockWapper .abstract-card .ant-card-body{
+	padding: 24px 0
+}
+.blockWapper .ant-card-body .ant-card-type-inner{
+	margin-top: 30px
+}
+.blockWapper .ant-card-body .ant-card-type-inner:nth-child(1){
+	margin-top: 1px
+}
