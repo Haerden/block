@@ -29,7 +29,7 @@ class App extends Component {
             <Route path='/user' exact component={UserInfo}></Route> 
             <Route path='/account' exact component={AccountPage}></Route>
             <Route path='/block' exact component={BlockPage}></Route>
-            <Route path='/deatails/:uniquekey' exact component={BlockDetailPage}></Route> 
+            <Route path='/deatails/:uniquekey' component={BlockDetailPage}></Route> 
             <Route path='/coinInout' exact component={CoinInout}></Route>   
             <Footer />      	
       		</div>

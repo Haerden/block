@@ -193,4 +193,4 @@
         return carousel.inital();
     };
 
-})(jQuery, window, document, undefined);
+})($, window, document, undefined);

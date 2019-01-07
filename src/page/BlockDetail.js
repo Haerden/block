@@ -1,23 +1,22 @@
 import React,{ Component } from 'react';
 import {Card,Row,Col} from 'antd';
-import {Link} from "react-router-dom";
 
 import './style/slider.css';
 import './style/account.css';
-class BlockDetailPage extends Component {
+
+class BlockDetail extends Component {
 	
 	handleChange(value) {
 	  console.log(value); 
 	}
 	render() {
 		return (
-		  <Link to={`/details/${this.props.params.id}`}>
 			<div className="blockWapper">
                 <Card title="摘要" className="abstract-card">
                 	<Row>
 					<Col span={7} style={{ borderRight:'1px solid #ddd', padding:'0 20px'}}>
 						<p>
-							<span>高度{this.props.params.id}</span>
+							<span>高度</span>
 							<span className="fr">554,,450</span>
 						</p>
 						<p>
@@ -127,9 +126,8 @@ class BlockDetailPage extends Component {
 				</Card>
                 	
             </div>
-			</Link>
 		)
 	}
 }
 
-export default BlockDetailPage; 
+export default BlockDetail; 

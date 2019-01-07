@@ -27,3 +27,11 @@
 #cell {
 	border-bottom:1px solid #ddd
 }
+/*区块详情*/
+.blockWapper{margin:100px 100px 35px; color: #db9a2c}
+.blockWapper p{ color: #8d8d8d}
+.blockWapper .fr{ float: right; color: #5a5a5a}
+.blockWapper .ant-card-body .ant-card-head-title{color: #db9a2c}
+.blockWapper .ant-row{color: #db9a2c}
+.abstract-card{margin-bottom: 20px}
+.abstract-card .ant-card-wider-padding .ant-card-body{ padding: 24px 0}

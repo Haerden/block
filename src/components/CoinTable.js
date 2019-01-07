@@ -31,17 +31,16 @@ export default class CoinTable extends React.Component {
                 title: '最新价格',
                 key: 'price',
                 dataIndex: 'price',
-                sorter:(a,b)=>{
-                    return a.new - b.new;
-                },
-                sortOrder:this.state.sortOrder,
                 width:'16%'
             },
             {
                 title: '涨幅',
                 key: 'gap',
                 dataIndex: 'gap',
-                width:'16%'
+                width:'16%',
+                render: text => (
+                    text > 0 ? <span style={{color:'#FAAD14'}}>{text+'%'}</span> : <span style={{color:'#A0D911'}}>{text+'%'}</span>
+                )
             },
             {
                 title: '最高价',

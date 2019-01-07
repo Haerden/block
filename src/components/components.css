@@ -153,7 +153,14 @@
  padding: 9px 30px;
  margin-right: 82px
 }
+.block_page_content .test_triangle_border a{
+	color:rgba(0, 0, 0, 0.65)
+}
 
+.block_page_content .test_triangle_border p{
+	margin-bottom: 0.5em;
+	color:rgba(0, 0, 0, 0.65)
+}
 .block-content p {
  margin-bottom: 0.5em
 }
@@ -182,12 +189,26 @@
 }
 
 .block-content {
- margin: 20px;	
+ 	margin: 20px;	
 }
 .block-content .ant-timeline-item-tail {
- border-left: 1px solid #69c0ff;
+ 	border-left: 1px solid #69c0ff;
  }
-
+.block-content .ant-timeline-item-head {
+    position: absolute;
+    text-align: center;
+    border: 0;
+    height: 50px;
+    background: url(/static/media/ad.1e5195c7.png);
+    background-size: 50px 50px;
+    left: -21px;
+    width: 50px;
+}
+.card-container .ant-table-fixed-header .ant-table-scroll .ant-table-header {
+    overflow: initial;
+	padding-bottom: 20px !important;
+	padding-right: 20px;
+}
 .block-content .ant-timeline-item {
     position: relative;
     padding: 0px 0px 8px;

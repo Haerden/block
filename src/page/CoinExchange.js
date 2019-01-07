@@ -14,7 +14,6 @@ class CoinExchange extends React.Component{
             },
             otherCoinTotal:0,
             cbcCoinTotal:0
-
         }
     }
     handleOtherChange = (value) => {
@@ -34,6 +33,7 @@ class CoinExchange extends React.Component{
             selectedItem: record
         })
     }
+    
     render(){
         const marketList = [{
 			"id": 1,
@@ -419,12 +419,12 @@ class CoinExchange extends React.Component{
                                     </Card.Grid>
                                 </Card>
                             </Col>
-                            <Col span={8} offset={1} style={{height:'560px'}}>
-                                <Card title="实时成交">
+                            <Col span={8} offset={1}>
+                                <Card title="实时成交" style={{height:'560px'}}>
                                     <Table columns={columnsTime} 
                                         dataSource={TimeList} 
                                         pagination={false} 
-                                        scroll={{ y: 395 }}
+                                        scroll={{ y: 350 }}
                                     />
                                 </Card>
                             </Col>

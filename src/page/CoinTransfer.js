@@ -1,4 +1,5 @@
 import React from "react";
+import $ from 'jquery'
 import { Carousel,Row,Col,Card, Form,InputNumber, Input, Button, Select } from "antd";
 import park_img from '../static/park.png'
 import card_a from '../static/card_a.png'
@@ -14,12 +15,23 @@ class CoinTransfer extends React.Component {
         super(props);
         this.state = { 
             userl:[],
-            userlist:['IFC-bcdwop 12379','IFC-bcdwop 12378','IFC-bcdwop 12370']       
+            userlist:['IFC-bcdwop 12379','IFC-bcdwop 12378','IFC-bcdwop 12370'],
+            userCoin:'IFC-bcdwop 12379 '
         };
     }
-
-    handleChange = (value)=>{
-        console.log(`selected ${value}`);
+    // componentdidmount(){
+    //     $(function() { $('#carousel').carousel({     
+    //         curDisplay: 0, //默认索引 
+    //         autoPlay: false, //是否自动播放 
+    //         interval: 3000 //间隔时间  
+    //        });   
+    //     }); 
+    // }
+    handleSelectChange = (value) => {
+        this.setState({
+                userCoin:value
+            }
+        )
     }
     render() {
         const { getFieldDecorator } = this.props.form;
@@ -41,7 +53,7 @@ class CoinTransfer extends React.Component {
                                         ],
                                         initialValue:'IFC-bcdwop 12379'
                                     })(
-                                        <Select size='small' value={this.state.userl} onChange={this.handleChange}>
+                                        <Select value={this.state.userl} onChange={this.handleSelectChange}>
                                             {
                                                 this.state.userlist.map((value,key)=>{
                                                     return <Option key={key} value={value}>{value}</Option>
@@ -53,22 +65,19 @@ class CoinTransfer extends React.Component {
                                     <FormItem
                                     label="转入 IFC币账户"
                                     >
-                                    {getFieldDecorator('select', {
+                                    {getFieldDecorator('input', {
                                         rules: [
                                         { message: 'Please select your country!' },
                                         ],
                                     })(
-                                        <Select placeholder="请输入IFC 币账户地址" size='small'>
-                                            <Option value="china">IFC-bcdwop12378</Option>
-                                            <Option value="usa">IFC-bcdwop12368</Option>
-                                        </Select>
+                                        <Input  placeholder="请输入IFC 币账户地址" />
                                     )}
                                     </FormItem>
                                     <FormItem
                                     label="转让数量"
                                     >
                                     {getFieldDecorator('input-number')(
-                                        <InputNumber placeholder="请输入 Infohold Coin 数量" min={1} max={10} size='small' style={{width:'100%'}}/>
+                                        <InputNumber placeholder="请输入 Infohold Coin 数量" min={1} max={100000} style={{width:'100%'}}/>
                                     )}
                                     </FormItem>
                                     <FormItem>
@@ -94,7 +103,7 @@ class CoinTransfer extends React.Component {
                                     </div>
                                 </div>
                             <Meta
-                            title="IFC 账户：IFC-bcdwop 12378 可用IFC数量：3000"
+                            title= {`IFC 账户：${this.state.userCoin}  可用IFC数量：3000`}
                             style={{textAlign:'center',marginBottom:50,marginTop:10}}
                             />
                         </Card>

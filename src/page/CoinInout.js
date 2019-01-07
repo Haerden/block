@@ -9,7 +9,7 @@ class CoinInout extends React.Component{
         super();
         this.state = { 
             userl:[],
-            userlist:['111','222','333'],
+            userlist:['IFC-bcdwop 12379','IFC-bcdwop 12379','IFC-bcdwop 12379'],
             labeldefault:{
                 labelFrist:'IFC 币账户',
                 labelSencond:'小付钱包账户',
@@ -136,7 +136,7 @@ class CoinInout extends React.Component{
                                         ],
                                         initialValue:'000'
                                     })(
-                                        <Select size='small' value={this.state.userl} onChange={this.handleChange}>
+                                        <Select  value={this.state.userl} onChange={this.handleChange}>
                                             {
                                                 this.state.userlist.map((value,key)=>{
                                                     return <Option key={key} value={value}>{value}</Option>
@@ -148,7 +148,7 @@ class CoinInout extends React.Component{
                                     <FormItem
                                     label={this.state.recharge.labelSencond}
                                     >
-                                         <Select placeholder="请输入IFC 币账户地址" size='small'>
+                                         <Select placeholder="请输入IFC 币账户地址">
                                            {
                                                 this.state.userlist.map((value,key)=>{
                                                     return <Option key={key} value={value}>{value}</Option>
@@ -160,11 +160,11 @@ class CoinInout extends React.Component{
                                     label={this.state.recharge.labelThree}
                                     >
                                         {getFieldDecorator('input-number')(
-                                            <InputNumber placeholder="请输入 Infohold Coin 数量" min={1} max={10} size='small' style={{width:'100%'}}/>
+                                            <InputNumber placeholder="请输入 Infohold Coin 数量" min={1} max={10} style={{width:'100%'}}/>
                                         )}
                                     </FormItem>
                                     <FormItem>
-                                        <Button type="primary" htmlType="submit" className="transfer-form-button" size='small'>
+                                        <Button type="primary" htmlType="submit" className="transfer-form-button">
                                         {this.state.recharge.labelButton}
                                         </Button>
                                     </FormItem>

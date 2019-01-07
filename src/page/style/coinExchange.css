@@ -13,7 +13,7 @@
 }
 .trade-content .ant-input-disabled{
 	color: #666;
-	background-color: #f6f6f6;
+	background-color: #f8f8f8;
 }
 .trade-title .currencyname {
 	padding-left: 35px;
@@ -29,7 +29,7 @@
 	font-size: 16px
 }
 .trade-content .ant-col-18{
-	width: 72%;
+	width: 75%;
 	float:right;
 	margin-top:0
 }
@@ -60,7 +60,15 @@
 	text-align: left;
 	padding: 0 20px
 }
-
+.trade-content .ant-col-offset-1 {
+    margin-left: 2.5%;
+}
+.trade-content .ant-col-8 {
+    width: 35%;
+}
+.trade-content .ant-col-6{
+	width: 23%
+}
 .trade-botton p {
 	color: #333;
 	font-size: 17px;
@@ -150,4 +158,8 @@
 
 .trade-content .ant-slider-handle {
 	border: solid 2px #d48806;
+}
+.trade-content .ant-table-fixed-header .ant-table-scroll .ant-table-header{
+	overflow: initial;
+	padding-bottom: 20px !important;
 }

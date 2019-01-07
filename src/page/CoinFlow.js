@@ -33,7 +33,6 @@ class CoinFlow extends Component {
 		  key: 'locate',
 		  dataIndex: 'locate',
 		}
-
 		];
 		const data = [{
   			key: '1',

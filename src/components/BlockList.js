@@ -15,12 +15,12 @@ class BlockList extends Component {
                             <div className="test_triangle_border">
                                 <Row>
                                     <Col span={11}>
-                                        <h4>区块号：346,236</h4>
+                                        <h4>区块号：346,235</h4>
                                         <p>块哈希：3dcdf849ea875411</p>
                                     </Col>
                                     <Col span={9}>
                                         <p>创建时间：</p>
-                                        <p>2017-04-19  14：18PM</p>
+                                        <p>2017-04-30  12：18PM</p>
                                     </Col>
                                     <Col span={4}>
                                         <p>块版本：</p>
@@ -38,7 +38,7 @@ class BlockList extends Component {
                                     </Col>
                                     <Col span={9}>
                                         <p>创建时间：</p>
-                                        <p>2017-04-19   14：18PM</p>
+                                        <p>2017-04-19   15：26PM</p>
                                     </Col>
                                     <Col span={4}>
                                         <p>块版本：</p>
@@ -51,12 +51,12 @@ class BlockList extends Component {
                             <div className="test_triangle_border">
                                 <Row>
                                     <Col span={11}>
-                                        <h4>区块号：346,236</h4>
+                                        <h4>区块号：346,237</h4>
                                         <p>块哈希：3dcdf849ea875411</p>
                                     </Col>
                                     <Col span={9}>
                                         <p>创建时间：</p>
-                                        <p>2017-04-19   14：18PM</p>
+                                        <p>2017-04-15   14：18PM</p>
                                     </Col>
                                     <Col span={4}>
                                         <p>块版本：</p>
@@ -69,12 +69,12 @@ class BlockList extends Component {
                             <div className="test_triangle_border">
                                 <Row>
                                     <Col span={11}>
-                                        <h4>区块号：346,236</h4>
+                                        <h4>区块号：346,238</h4>
                                         <p>块哈希：3dcdf849ea875411</p>
                                     </Col>
                                     <Col span={9}>
                                         <p>创建时间：</p>
-                                        <p>2017-04-19   14：18PM</p>
+                                        <p>2017-04-13   10：30PM</p>
                                     </Col>
                                     <Col span={4}>
                                         <p>块版本：</p>
