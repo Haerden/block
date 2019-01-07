@@ -192,17 +192,34 @@
  	margin: 20px;	
 }
 .block-content .ant-timeline-item-tail {
- 	border-left: 1px solid #69c0ff;
+ 	border-left: 1px solid #d38807;
  }
 .block-content .ant-timeline-item-head {
     position: absolute;
     text-align: center;
     border: 0;
-    height: 50px;
-    background: url(/static/media/ad.1e5195c7.png);
-    background-size: 50px 50px;
-    left: -21px;
-    width: 50px;
+    height: 33px;
+    background: url(./../static/block.png);
+    background-size: 33px 33px;
+    left: -8px;
+	width: 33px;
+	background-color: #fff;
+    border-radius: 0;
+}
+.block_page_content .ant-timeline-item-head {
+    position: absolute;
+    text-align: center;
+    border: 0;
+    height: 33px;
+    background: url(./../static/block.png);
+    background-size: 33px 33px;
+    left: -8px;
+	width: 33px;
+	background-color: #fff;
+    border-radius: 0;
+}
+.block_page_content .ant-timeline-item-tail {
+	border-left: 1px solid #d38807;
 }
 .card-container .ant-table-fixed-header .ant-table-scroll .ant-table-header {
     overflow: initial;

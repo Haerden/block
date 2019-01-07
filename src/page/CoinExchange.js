@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Form,Slider, Input, Button,Tabs, Select,List,Row,Col,Table } from "antd";
+import { Card,Slider,Input,Button,List,Row,Col,Table } from "antd";
 import './style/coinExchange.css';
 
 class CoinExchange extends React.Component{

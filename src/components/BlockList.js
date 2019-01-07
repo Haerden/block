@@ -65,7 +65,7 @@ class BlockList extends Component {
                                 </Row>
                             </div>
                         </Timeline.Item>
-                        <Timeline.Item  dot={<Icon type="clock-circle-o" style={{ fontSize: '16px' }} />}>
+                        <Timeline.Item>
                             <div className="test_triangle_border">
                                 <Row>
                                     <Col span={11}>
