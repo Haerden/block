@@ -1,3 +1,6 @@
+import $ from 'jquery'
+import jQuery from 'jquery'
+/*eslint-disable */
 ;(function($, window, document, undefined) {
     var Carousel = function(elem, options) {
         this.defaults = {
@@ -193,4 +196,6 @@
         return carousel.inital();
     };
 
-})($, window, document, undefined);
+})(jQuery, window, document, undefined);
+/*eslint-enable */
+export default $

@@ -1,12 +1,11 @@
 import React,{ Component } from 'react';
 import {Card,Row,Col,Select} from 'antd';
-
 import card_a from '../static/card_d.png'
 import card_b from '../static/card_e.png'
 import card_c from '../static/card_f.png'
 import './style/slider.css';
 import './style/account.css';
-
+import $ from './slider.js'
 const Option = Select.Option
 
 
@@ -17,7 +16,12 @@ class AccountPage extends Component {
 	  console.log(value); 
 	}
 	componentDidMount(){
-        this.node.scrollTop = 0
+		this.node.scrollTop = 0
+		$('#carousel').carousel({     
+            curDisplay: 0, //默认索引 
+            autoPlay: false, //是否自动播放 
+            interval: 3000 //间隔时间  
+        }); 
     }
 	render() {
 		return (

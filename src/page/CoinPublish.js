@@ -9,7 +9,6 @@ const props = {
     action: '//jsonplaceholder.typicode.com/posts/',
     listType: 'picture',
 };
-
 class CoinPublish extends React.Component {
     state = {
       confirmDirty: false,

@@ -1,17 +1,17 @@
 import React from "react";
-import $ from 'jquery'
+import $ from './slider.js'
 import { Carousel,Row,Col,Card, Form,InputNumber, Input, Button, Select } from "antd";
 import park_img from '../static/park.png'
-import card_a from '../static/card_a.png'
-import card_b from '../static/card_b.png'
-import card_c from '../static/card_c.png'
+import card_a from '../static/card_d.png'
+import card_b from '../static/card_e.png'
+import card_c from '../static/card_f.png'
 import './style/slider.css';
 const FormItem = Form.Item;
 const Option = Select.Option;
 const { Meta } = Card;
 
 class CoinTransfer extends React.Component {
-    constructor(props) {
+    constructor(props){
         super(props);
         this.state = { 
             userl:[],
@@ -19,14 +19,13 @@ class CoinTransfer extends React.Component {
             userCoin:'IFC-bcdwop 12379 '
         };
     }
-    // componentdidmount(){
-    //     $(function() { $('#carousel').carousel({     
-    //         curDisplay: 0, //默认索引 
-    //         autoPlay: false, //是否自动播放 
-    //         interval: 3000 //间隔时间  
-    //        });   
-    //     }); 
-    // }
+    componentDidMount(){
+         $('#carousel').carousel({     
+            curDisplay: 0, //默认索引 
+            autoPlay: false, //是否自动播放 
+            interval: 3000 //间隔时间  
+           });   
+    }
     handleSelectChange = (value) => {
         this.setState({
                 userCoin:value
