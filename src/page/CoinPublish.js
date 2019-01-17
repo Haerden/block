@@ -14,25 +14,34 @@ class CoinPublish extends React.Component {
     state = {
       confirmDirty: false,
       autoCompleteResult: [],
-      coinNumber:''
     };
+
+    static getDerivedStateFromProps(nextProps) {
+        if ('value' in nextProps) {                                                                                                                                    
+          return {
+            ...(nextProps.value || {}),
+          };
+        }
+        return null;
+    }
+
     componentDidMount(){
         this.node.scrollIntoView();
     }
     reset = ()=>{
         this.props.form.resetFields();
     }
-    
     compareCoinNumber = (rule, value, callback) => {
         const form = this.props.form;
         if (value <= 10000000) {
           callback('最少发行一千万个');
+          return;
         } else if  (value > 100000000){
           callback('最多发行一亿个');
+          return;
         }
     }
-
-    handleSelectChange = (value) => {
+    handleNumberChange = (value) => {
         if(value <= 10000000){
             this.props.form.setFieldsValue({
                 price: 200,
@@ -43,9 +52,26 @@ class CoinPublish extends React.Component {
             });
         }
     }
+    handButtonFl = (e) => {
+        e.preventDefault();
+        this.props.form.setFieldsValue({
+            coinNumber: 100000000,
+        });
+    }
+    handleButtonHalf = (e) => {
+        e.preventDefault();
+        this.props.form.setFieldsValue({
+            coinNumber: 100000000/2,
+        });
+    }
+    handleButtonFourth = (e) => {
+        e.preventDefault();
+        this.props.form.setFieldsValue({
+            coinNumber: 100000000/4,
+        });
+    }
     render() {
       const { getFieldDecorator } = this.props.form;
-      const { autoCompleteResult } = this.state;
   
       const formItemLayout = {
         labelCol: {
@@ -122,6 +148,7 @@ class CoinPublish extends React.Component {
                     <FormItem
                         {...formItemLayout}
                         label="数量"
+                        style={{marginBottom: 0}}
                         >
                         {getFieldDecorator('coinNumber',{
                             rules: [{
@@ -130,22 +157,25 @@ class CoinPublish extends React.Component {
                                 validator: this.compareCoinNumber,
                             }]
                         })(
-                        <div>
                         <InputNumber
                                 min={10000000}
                                 max={100000000}
                                 style={{width:'100%'}}
                                 addonAfter='IFC'
-                                onChange={this.handleSelectChange}
+                                onChange={this.handleNumberChange}
                             />
-                            <ButtonGroup>
-                                <Button size='small' onClick={this.handleButtonFull.bind(this, )}>全仓</Button>
-                                <Button size='small' onClick={this.handleButtonHalf}>半仓</Button>
-                                <Button size='small' onClick={this.handleButtonHalfb}>1/4仓</Button>
-                            </ButtonGroup>
-                        </div>
                         )}
                     </FormItem>
+                    <Form.Item style={{marginBottom: 0,marginLeft:'29.2%'}}>
+                        {getFieldDecorator('button')(
+                        <ButtonGroup>
+                            <Button size='small' onClick={this.handButtonFl}>全仓</Button>
+                            <Button size='small' onClick={this.handleButtonHalf}>半仓</Button>
+                            <Button size='small' onClick={this.handleButtonFourth}>1/4仓</Button>
+                        </ButtonGroup>
+                        )}
+                        
+                    </Form.Item>
                     <FormItem
                         {...formItemLayout}
                         label='费用：'
