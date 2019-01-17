@@ -1,5 +1,5 @@
 import React from "react";
-import { Card,Slider,Input,Button,List,Row,Col,Table } from "antd";
+import { Card,Slider,Input,Button,List,Row,Col,Table,InputNumber } from "antd";
 import './style/coinExchange.css';
 
 class CoinExchange extends React.Component{
@@ -13,7 +13,11 @@ class CoinExchange extends React.Component{
                 gain:'-20%'
             },
             otherCoinTotal:0,
-            cbcCoinTotal:0
+            cbcCoinTotal:0,
+            inputValue: 0,
+            inputLeftValue: 0,
+            cointotal:1000,
+            cbctotal:10000
         }
     }
     handleOtherChange = (value) => {
@@ -23,7 +27,13 @@ class CoinExchange extends React.Component{
     }
     handleCbcChange = (value) => {
         this.setState({
-            cbcCoinTotal:value 
+            inputValue:value 
+        })
+    } 
+    handleLeftChange = (value) => {
+        console.log(value)
+        this.setState({
+            inputLeftValue:value 
         })
     }
     onRowClick = (record, index) => {
@@ -33,7 +43,14 @@ class CoinExchange extends React.Component{
             selectedItem: record
         })
     }
-    
+    // state = {
+    //     inputValue: 0,
+    // }
+    onChange = (value) => {
+        this.setState({
+          inputValue: value,
+        });
+      }
     render(){
         const marketList = [{
 			"id": 1,
@@ -170,17 +187,17 @@ class CoinExchange extends React.Component{
         };   
         const marks = {
             0: '0',
-            2500: '2500',
-            5000: '5000',
-            7500: '7500',
-            10000: '10000 CBC'
+            2500: `${this.state.cbctotal/4}`,
+            5000: `${this.state.cbctotal/2}`,
+            7500: `${this.state.cbctotal*3/4}`,
+            10000: `${this.state.cbctotal}`
         };
         const marksIFC = {
             0: '0',
-            250: '250',
-            500: '500',
-            750: '750',
-            1000: '1000 IFC'
+            250: `${this.state.cointotal/4}`,
+            500: `${this.state.cointotal/2}`,
+            750: `${this.state.cointotal*3/4}`,
+            1000: `${this.state.cointotal}`
         };
 
         const columns = [{
@@ -223,7 +240,7 @@ class CoinExchange extends React.Component{
         const columnsTime = [{
             title: '时间',
             dataIndex: 'time',
-            width:'25%',
+            width:'35%',
           },{
             title: '方向',
             dataIndex: 'businessTitle',
@@ -234,11 +251,11 @@ class CoinExchange extends React.Component{
           }, {
             title: '价格(IFC)',
             dataIndex: 'entrustPrice',
-            width:'25%',
+            width:'20%',
           },{
             title: '数量(CBC)',
             dataIndex: 'entrustCount',
-            width:'25%',
+            width:'20%',
           }
         ];
         const newsList = [
@@ -263,6 +280,7 @@ class CoinExchange extends React.Component{
                 time:'2018.12.11  10:10'
             },
         ];
+        const { inputValue } = this.state;
         return ( 
             <div className="trade-content">
                 <Row>
@@ -294,51 +312,68 @@ class CoinExchange extends React.Component{
                                 <Card title="兑换">
                                     <Card.Grid style={gridStyle}>
                                         <p className="changeTitle">
-                                            可用 {this.state.selectedItem.currencyName} 101,250.00
+                                            可用 {this.state.selectedItem.currencyName} {this.state.cbctotal}
                                         </p>
                                         <div className="changeInput">
                                             <p>兑换价</p>
                                             <Input 
-                                            value='50'
-                                            suffix='IFC'
+                                            defaultValue='50'
+                                            addonAfter='IFC' 
                                             disabled
                                             />
                                         </div>
                                         <div className="changeInput">
                                             <p>兑换量</p>
-                                            <Input 
-                                            suffix={this.state.selectedItem.currencyName}
-                                            value={this.state.otherCoinTotal}
-                                            />
+                                            <div className="trade-number">
+                                                <InputNumber 
+                                                value={this.state.inputLeftValue}
+                                                onChange={(e)=>this.handleLeftChange(e)}
+                                                min={0} max={10000}
+                                                />
+                                                <span class="ant-input-group-addon">{this.state.selectedItem.currencyName}</span>
+                                            </div>
                                         </div> 
                                         <div className="trade-botton">
-                                            <Slider marks={marks} min={0} max={10000} onChange={this.handleOtherChange} />
-                                            <p>可兑换 {this.state.otherCoinTotal/4} IFC</p>
+                                            <Slider marks={marks} min={0} max={10000}
+                                                    onChange={this.handleLeftChange}
+                                                    value={this.state.inputLeftValue}
+                                                    step={1} />
+                                            <p>可兑换 {this.state.inputLeftValue/4} IFC</p>
                                             <Button block>{this.state.selectedItem.currencyName} => IFC</Button>
                                         </div>
                                     </Card.Grid>
                                     <Card.Grid style={gridStyle}>
                                         <p className="changeTitle">
-                                             可用 IFC 500.00
+                                             可用 IFC {this.state.cointotal}
                                         </p>
                                         <div className="changeInput">
                                             <p>兑换价</p>
                                             <Input 
-                                            suffix={this.state.selectedItem.currencyName}
-                                            value='200'
+                                            addonAfter={this.state.selectedItem.currencyName} 
+                                            defaultValue='200'
                                             disabled
                                             />
                                         </div>
                                         <div className="changeInput">
                                             <p>兑换量</p>
-                                            <Input 
-                                            suffix='IFC'
-                                            value={this.state.cbcCoinTotal}
-                                            />
+                                            <div className="trade-number">
+                                                <InputNumber 
+                                                value={inputValue}
+                                                onChange={this.handleCbcChange}
+                                                min={0} max={1000}
+                                                />
+                                                <span class="ant-input-group-addon">IFC</span>
+                                            </div>
+
                                         </div> 
                                         <div className="trade-botton">
-                                            <Slider marks={marksIFC} min={0} max={1000}  onChange={this.handleCbcChange} />
-                                            <p>可兑换 {this.state.cbcCoinTotal/2} IFC</p>
+                                            <Slider 
+                                            marks={marksIFC} min={0} max={1000} 
+                                            onChange={this.handleCbcChange}
+                                            value={typeof inputValue === 'number' ? inputValue : 0}
+                                            step={1}
+                                            />
+                                            <p>可兑换 {this.state.inputValue/2} CBC</p>
                                             <Button type="primary"  block>IFC => {this.state.selectedItem.currencyName}</Button>
                                         </div>                                      
                                     </Card.Grid>
@@ -358,7 +393,7 @@ class CoinExchange extends React.Component{
                 </Row>
                 <Row style={{marginTop:28}}>
                     <Col span={6}>
-                       <Card title="行情列表" style={{height:'560px'}}>
+                       <Card title="新闻公告" style={{height:'560px'}}>
                        <List
                             itemLayout="horizontal"
                             dataSource={newsList}

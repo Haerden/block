@@ -1,8 +1,9 @@
 import React from "react";
-import { Upload,Card,Form,DatePicker,Input,Icon,  Select, Row, Col, Button, AutoComplete,InputNumber } from "antd";
+import { Upload,Card,Form,DatePicker,Input,Icon,  Select, Button, AutoComplete,InputNumber } from "antd";
 import './style/coinPublish.css'
 const FormItem = Form.Item;
 const Option = Select.Option;
+const ButtonGroup = Button.Group;
 const { TextArea } = Input;
 const AutoCompleteOption = AutoComplete.Option;
 const props = {
@@ -13,9 +14,34 @@ class CoinPublish extends React.Component {
     state = {
       confirmDirty: false,
       autoCompleteResult: [],
+      coinNumber:''
     };
     componentDidMount(){
         this.node.scrollIntoView();
+    }
+    reset = ()=>{
+        this.props.form.resetFields();
+    }
+    
+    compareCoinNumber = (rule, value, callback) => {
+        const form = this.props.form;
+        if (value <= 10000000) {
+          callback('最少发行一千万个');
+        } else if  (value > 100000000){
+          callback('最多发行一亿个');
+        }
+    }
+
+    handleSelectChange = (value) => {
+        if(value <= 10000000){
+            this.props.form.setFieldsValue({
+                price: 200,
+            });
+        }else if(value > 10000000){
+            this.props.form.setFieldsValue({
+                price: `${Math.floor(value/50000)}`,
+            });
+        }
     }
     render() {
       const { getFieldDecorator } = this.props.form;
@@ -52,10 +78,7 @@ class CoinPublish extends React.Component {
                         label="名称："
                     >
                         {getFieldDecorator('email', {
-                        rules: [{
-                            type: 'email', message: 'The input is not valid E-mail!',
-                        }],
-                        initialValue:'长白山旅游景区'
+                            initialValue:'长白山旅游景区'
                         })(
                         <Input/>
                         )}
@@ -83,6 +106,9 @@ class CoinPublish extends React.Component {
                         label="有效期"
                         >
                         {getFieldDecorator('select',{
+                            rules: [{
+                                required: true
+                            }],
                             initialValue:'1年'
                         })(
                             <Select>
@@ -97,13 +123,28 @@ class CoinPublish extends React.Component {
                         {...formItemLayout}
                         label="数量"
                         >
+                        {getFieldDecorator('coinNumber',{
+                            rules: [{
+                                required: true, message: '请填写发行的数量',
+                                }, {
+                                validator: this.compareCoinNumber,
+                            }]
+                        })(
+                        <div>
                         <InputNumber
-                            min={1}
-                            max={100000000}
-                            defaultValue={1}
-                            style={{width:'100%'}}
-                            addonAfter='IFC'
-                        />
+                                min={10000000}
+                                max={100000000}
+                                style={{width:'100%'}}
+                                addonAfter='IFC'
+                                onChange={this.handleSelectChange}
+                            />
+                            <ButtonGroup>
+                                <Button size='small' onClick={this.handleButtonFull.bind(this, )}>全仓</Button>
+                                <Button size='small' onClick={this.handleButtonHalf}>半仓</Button>
+                                <Button size='small' onClick={this.handleButtonHalfb}>1/4仓</Button>
+                            </ButtonGroup>
+                        </div>
+                        )}
                     </FormItem>
                     <FormItem
                         {...formItemLayout}
@@ -118,13 +159,12 @@ class CoinPublish extends React.Component {
                         {...formItemLayout}
                         label="转让方式"
                         >
-                        {getFieldDecorator('select', {
-                            rules: [
-                            { message: 'Please select your country!' },
-                            ],
-                            initialValue:'免费赠与'
+                        {getFieldDecorator('mode', {
+                            initialValue:"免费赠予"
                         })(
-                            <Input  disabled/>
+                            <Select>
+                                <Option value="1">免费赠予</Option>
+                            </Select>
                         )}
                     </FormItem>    
                     <FormItem label="简述"
@@ -132,18 +172,19 @@ class CoinPublish extends React.Component {
                     >
                         <TextArea rows={4} placeholder='企业币概述介绍' />
                     </FormItem>    
-                    <FormItem label="上传文件"
+                    <FormItem label="上传币样"
                         {...formItemLayout}
                     >
                         <Upload {...props}>
                             <Button>
-                                <Icon type="upload" /> 上传文件
+                                <Icon type="upload" /> 上传币样
                             </Button>
                         </Upload>
+                        <p style={{fontSize:13,color:'#666666'}}>上传图片应为png，jpg格式且大小不能超过1M</p>
                     </FormItem>                             
                     <FormItem style={{float:'right',marginRight:300}}>
-                        <Button type="primary">发币</Button>
-                        <Button>重置</Button>
+                        <Button type="primary"  htmlType="submit">发币</Button>
+                        <Button onClick={this.reset}>重置</Button>
                     </FormItem>
                 </Form>                
             </Card>

@@ -163,3 +163,25 @@
 	overflow: initial;
 	padding-bottom: 20px !important;
 }
+.trade-content .trade-number{
+	width: 100%;
+    display: table;
+}
+.trade-content .trade-number .ant-input-number-input{
+    width: 100%;
+    margin-bottom: 0;
+    padding: 4px 11px;
+    border-bottom-right-radius: 0;
+	border-top-right-radius: 0;
+	height: 32px;
+}
+.trade-content .trade-number .ant-input-number{
+	width: 100%;
+	border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+}
+.issue-content .ant-btn:hover, .ant-btn:focus{
+	color: #fff;
+    background-color: #dc9b2d;
+    border-color: #dc9b2d;
+}
