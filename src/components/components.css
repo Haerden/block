@@ -189,7 +189,8 @@
 }
 
 .block-content {
- 	margin: 20px;	
+	 margin: 20px;	
+	 margin-bottom: 0
 }
 .block-content .ant-timeline-item-tail {
  	border-left: 1px solid #d38807;
@@ -205,7 +206,8 @@
 	width: 33px;
 	background-color: #fff;
     border-radius: 0;
-}
+} 
+.adList{margin-top: 20px}
 .block_page_content .ant-timeline-item-head {
     position: absolute;
     text-align: center;
@@ -245,6 +247,11 @@
  background: #fff;
 }
 
+.block-content .ant-timeline-item:hover .block-content .ant-timeline-item .ant-timeline-item-head{
+	background: url(./../static/hov.png);
+    background-size: 33px 33px;
+}
+
 .card-container .ant-tabs.ant-tabs-card .ant-tabs-card-bar .ant-tabs-tab-active {
  color: #db9a2c
 }
@@ -254,17 +261,21 @@
 }
 .card-container {
  margin: 20px;	
+ margin-bottom: 0
 }
 /*MarketList end*/
 /*info-content*/
 .info-content{
   margin: 20px;	
   height: 450px;
+  margin-left: 0;
+  margin-bottom:0
 }
 
 .info-content .ant-card-body {
     padding: 24px 24px 0px;
-    zoom: 1;
+	zoom: 1;
+	height: 403px
 }
 .rowbtn > .ant-col-8{
 	text-align: center;
