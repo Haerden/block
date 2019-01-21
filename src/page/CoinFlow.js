@@ -1,6 +1,7 @@
 import React,{ Component } from 'react';
 import {Card, Table} from 'antd';
 import axios from 'axios'
+import './style/coinPublish.css'
 class CoinFlow extends Component {
   // 列表请求
 	requestList = ()=>{
@@ -13,32 +14,50 @@ class CoinFlow extends Component {
 		this.node.scrollIntoView();
 		this.requestList()
 	}
-	renderMap = (result) => {
-		let list = result.route_list;
+	renderMap = (result) => { 
+	  let list = result.route_list;
 		this.map = new window.BMap.Map("container", {enableMapClick: false});
 		let gps2 = list[list.length - 1].split(',');
 		let cPoint = new window.BMap.Point(gps2[0], gps2[1]);
 
-		this.map.centerAndZoom(cPoint, 11);
+		this.map.centerAndZoom(cPoint, 4);
 		
-		let bikeList = result.bike_list;
-		
-		bikeList.forEach((item) => {
-				let p = item.split(",");
-				let point = new window.BMap.Point(p[0], p[1]);
-				var bikeMarker = new window.BMap.Marker(point, { icon: 
+		 let user_list = result.user_list;
+
+	for(var i=0;i<user_list.length;i++){
+			var point = new window.BMap.Point(user_list[i][0],user_list[i][1]); 
+			var content = '<div class="exam_coin_sel_details"><img class="user_addr"><div class="user_infom">' +
+			'<div class="exam_user_sel_details_coin">'+'<span class="coin-pic"></span><span class="coin-num">'+user_list[i][2]+'</span><span class="coin-a">兑换信息</span>'+'</div>' +
+			'<div>'+user_list[i][3]+' 兑换 '+user_list[i][4]+'</div>' +
+			'<div>'+user_list[i][5]+'</div>' +
+			'<div>'+user_list[i][6]+'</div>' +
+			'</div></div></div>';
+			var bikeMarker = new window.BMap.Marker(point, { icon: 
 					new window.BMap.Symbol(window.BMap_Symbol_SHAPE_POINT, {
 							scale: 2,
 							fillColor: "orange",
 							fillOpacity: 0.8
 					}) 
-				});
-				this.map.addOverlay(bikeMarker);
-		})
-		
-		this.addMapControl();
+			});
+			this.map.addOverlay(bikeMarker);         
+			this.addClickHandler(content,bikeMarker);
+	}	
+		this.addMapControl(content);
 };
-
+addClickHandler = (content,marker)=>{
+	let opts = {
+		width:161,
+		enableMessage:true,
+		offset: new window.BMap.Size(-20, -40)
+	}; 
+	marker.addEventListener("click",function(e){
+			let p = e.target;
+			let point = new window.BMap.Point(p.getPosition().lng, p.getPosition().lat);
+			let infoWindow = new window.BMap.InfoWindow(content,opts);  
+			this.map.openInfoWindow(infoWindow,point);
+		}
+	);
+}                
 addMapControl = () => {
 		let map = this.map;
 		var top_right_control = new window.BMap.ScaleControl({anchor: window.BMAP_ANCHOR_TOP_RIGHT});

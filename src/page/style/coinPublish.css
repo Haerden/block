@@ -23,3 +23,41 @@
 .ant-input-number-handler-wrap{
 	display: none
 }
+
+.user_addr{
+	width:100%;
+	height:108px;
+	background:url(../../static/addr.png) no-repeat; 
+	background-size: cover
+}
+.exam_coin_sel_details .user_infom{ 
+	font-size: 12px;color: #8e8e8e;
+	margin-top: 10px;
+}
+.user_infom div{ 
+	line-height: 20px
+}
+.exam_user_sel_details_coin{ 
+	display: flex;
+	align-items:center;
+	margin-bottom: 6px;
+}
+.exam_user_sel_details_coin .coin-num{
+	display: block;
+	font-size: 16px;
+	color: #333;
+	margin-left: 5px;
+	margin-right: 20px;
+}
+.exam_user_sel_details_coin .coin-a{
+	padding: 0px 5px;
+	border: 1px solid #fb5749;
+	color: #fb5749
+}
+.exam_coin_sel_details .coin-pic{
+	background:url(../../static/coin.png) no-repeat;
+    background-size: 30px 30px;background-size: 30px 30px;
+    display: inline-block;
+    width: 30px;
+	height: 30px;
+}
